@@ -9,7 +9,7 @@ export const badgeStyles = cva(
         joker: "border-joker/35 bg-joker/15 text-joker",
         bura: "border-bura/35 bg-bura/15 text-bura",
         success: "border-success/35 bg-success/15 text-success",
-        locked: "border-white/10 bg-white/5 text-muted-foreground"
+        locked: "border-red-400/45 bg-red-500/15 text-red-200"
       }
     },
     defaultVariants: {

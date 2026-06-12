@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { floatingCards, heroStats } from "@/components/compcss/home-hero/HomeHero.helpers"
+import { floatingCards } from "@/components/compcss/home-hero/HomeHero.helpers"
 import {
   arenaHeader,
   arenaPanel,
@@ -25,11 +25,9 @@ import {
   heroContainer,
   heroCopy,
   heroDescription,
-  heroEyebrow,
   heroGlowOne,
   heroGlowTwo,
   heroSection,
-  heroStatsGrid,
   heroTitle,
   heroVisual,
   playedCards,
@@ -40,7 +38,7 @@ import {
   tableSurface
 } from "@/components/compcss/home-hero/HomeHero.styles"
 import { homePageCopy } from "@/components/home/HomePage.helpers"
-import { buttonStyles, Container, StatCard } from "@/components/ui"
+import { buttonStyles, Container } from "@/components/ui"
 
 export function HomeHero() {
   return (
@@ -49,7 +47,6 @@ export function HomeHero() {
       <div className={heroGlowTwo()} />
       <Container className={heroContainer()}>
         <div className={heroCopy()}>
-          <p className={heroEyebrow()}>{homePageCopy.eyebrow}</p>
           <h1 className={heroTitle()}>{homePageCopy.title}</h1>
           <p className={heroDescription()}>{homePageCopy.description}</p>
           <div className={heroActions()}>
@@ -59,11 +56,6 @@ export function HomeHero() {
             <Link className={buttonStyles({ intent: "secondary", size: "lg" })} href="/bots">
               View Bots
             </Link>
-          </div>
-          <div className={heroStatsGrid()}>
-            {heroStats.map((stat) => (
-              <StatCard key={stat.label} label={stat.label} meta={stat.meta} value={stat.value} />
-            ))}
           </div>
         </div>
 
@@ -75,10 +67,10 @@ export function HomeHero() {
             </div>
             <div className={tableSurface()}>
               <div className={botRow()}>
-                <div className={botAvatar()}>AI</div>
+                <div className={botAvatar()}>BE</div>
                 <div className={botMeta()}>
-                  <p className={botName()}>Joker Easy Bot</p>
-                  <p className={botSubtext()}>Thinking like a friendly rival</p>
+                  <p className={botName()}>Bura Easy Bot</p>
+                  <p className={botSubtext()}>Ready for a clean starter match</p>
                 </div>
                 <div className={scoreChip()}>
                   <p className={scoreLabel()}>Bot</p>

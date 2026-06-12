@@ -8,16 +8,16 @@ export const leaderboardPanel = cva(
   "grid gap-6 rounded-[2rem] border border-white/12 bg-white/8 p-5 shadow-panel backdrop-blur-xl lg:grid-cols-[0.9fr_1.1fr] lg:p-7"
 )
 
-export const podiumGrid = cva("grid items-end gap-4 sm:grid-cols-3")
+export const podiumGrid = cva("grid gap-4 sm:grid-cols-3")
 
 export const podiumCard = cva(
-  "rounded-2xl border bg-card/72 p-5 text-center shadow-panel",
+  "grid min-h-[22rem] grid-rows-[3.25rem_5.25rem_8.5rem_5rem] place-items-center rounded-2xl border bg-card/72 p-5 text-center shadow-panel",
   {
     variants: {
       place: {
-        first: "border-primary/35 sm:min-h-72",
-        second: "border-bura/25 sm:min-h-64 sm:translate-y-6",
-        third: "border-joker/25 sm:min-h-56 sm:translate-y-10"
+        first: "border-primary/35",
+        second: "border-bura/25",
+        third: "border-joker/25"
       }
     },
     defaultVariants: {
@@ -27,7 +27,7 @@ export const podiumCard = cva(
 )
 
 export const podiumRank = cva(
-  "mx-auto grid size-12 place-items-center rounded-2xl text-lg font-black",
+  "grid size-12 place-items-center rounded-2xl text-lg font-black",
   {
     variants: {
       place: {
@@ -43,14 +43,18 @@ export const podiumRank = cva(
 )
 
 export const podiumAvatar = cva(
-  "mx-auto mt-5 grid size-16 place-items-center rounded-2xl border border-white/12 bg-white/10 text-xl font-black text-foreground"
+  "grid size-16 place-items-center rounded-2xl border border-white/12 bg-white/10 text-xl font-black text-foreground"
 )
 
-export const podiumName = cva("mt-4 text-xl font-black text-foreground")
+export const podiumIdentity = cva("self-center")
+
+export const podiumName = cva("text-xl font-black text-foreground")
 
 export const podiumMeta = cva("mt-1 text-sm font-semibold text-muted-foreground")
 
-export const podiumPoints = cva("mt-5 text-3xl font-black text-primary")
+export const podiumPoints = cva("self-start text-center text-3xl font-black leading-none text-primary")
+
+export const podiumPointsUnit = cva("mt-2 block")
 
 export const rankingWrap = cva("overflow-hidden rounded-2xl border border-white/10 bg-background/42")
 

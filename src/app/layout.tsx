@@ -8,7 +8,10 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "CardBot Arena",
-  description: "Challenge AI-style bots in Joker and Bura card-game arenas."
+  description: "Challenge AI-style bots in Joker and Bura card-game arenas.",
+  icons: {
+    icon: "/favicon.svg"
+  }
 }
 
 const geistSans = Geist({
