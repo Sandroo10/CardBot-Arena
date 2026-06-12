@@ -13,8 +13,12 @@ export const logoLink = cva(
 )
 
 export const logoMark = cva(
-  "grid size-11 place-items-center rounded-2xl border border-primary/30 bg-primary/15 text-lg font-black text-primary shadow-glow"
+  "relative grid size-11 place-items-center rounded-xl border border-joker/40 bg-white text-slate-950 shadow-glow transition group-hover:-rotate-3"
 )
+
+export const logoCardRank = cva("absolute left-1.5 top-1 text-sm font-black text-joker")
+
+export const logoCardCenter = cva("text-lg font-black text-joker")
 
 export const logoText = cva("text-lg font-black text-foreground sm:text-xl")
 

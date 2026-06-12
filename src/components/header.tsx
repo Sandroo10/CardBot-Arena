@@ -13,6 +13,8 @@ import {
   headerInner,
   headerRoot,
   logoLink,
+  logoCardCenter,
+  logoCardRank,
   logoMark,
   logoText,
   menuButton,
@@ -30,7 +32,8 @@ export function Header() {
       <div className={headerInner()}>
         <Link className={logoLink()} href="/" onClick={() => setIsMenuOpen(false)}>
           <span className={logoMark()} aria-hidden="true">
-            CB
+            <span className={logoCardRank()}>J</span>
+            <span className={logoCardCenter()}>★</span>
           </span>
           <span className={logoText()}>CardBot Arena</span>
         </Link>
