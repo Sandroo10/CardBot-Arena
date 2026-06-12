@@ -13,9 +13,11 @@ import {
   podiumAvatar,
   podiumCard,
   podiumGrid,
+  podiumIdentity,
   podiumMeta,
   podiumName,
   podiumPoints,
+  podiumPointsUnit,
   podiumRank,
   rankingChange,
   rankingGame,
@@ -51,9 +53,14 @@ export function LeaderboardPreview() {
               >
                 <div className={podiumRank({ place: podiumPlaces[index] })}>#{index + 1}</div>
                 <div className={podiumAvatar()}>{player.name.slice(0, 2)}</div>
-                <h3 className={podiumName()}>{player.name}</h3>
-                <p className={podiumMeta()}>{player.favoriteGame} specialist</p>
-                <p className={podiumPoints()}>{player.points} pts</p>
+                <div className={podiumIdentity()}>
+                  <h3 className={podiumName()}>{player.name}</h3>
+                  <p className={podiumMeta()}>{player.favoriteGame} specialist</p>
+                </div>
+                <p className={podiumPoints()}>
+                  {player.points}
+                  <span className={podiumPointsUnit()}>pts</span>
+                </p>
               </article>
             ))}
           </div>

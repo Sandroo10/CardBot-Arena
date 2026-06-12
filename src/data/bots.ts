@@ -6,8 +6,8 @@ export const bots: Bot[] = [
     name: "Joker Easy",
     game: "Joker",
     difficulty: "Easy",
-    status: "active",
-    reward: 1,
+    status: "maintenance",
+    reward: 0,
     avatar: "JE",
     personality: "Calm starter bot",
     strategy: "Plays safe cards and leaves obvious openings."

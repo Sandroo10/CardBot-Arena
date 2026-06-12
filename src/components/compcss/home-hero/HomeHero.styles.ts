@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority"
 export const heroSection = cva("relative isolate pt-12")
 
 export const heroContainer = cva(
-  "grid min-h-[calc(100vh-9rem)] items-center gap-12 py-12 lg:grid-cols-[1.02fr_0.98fr]"
+  "grid min-h-[calc(100vh-9rem)] items-center gap-14 py-16 lg:grid-cols-[0.88fr_1.12fr]"
 )
 
 export const heroGlowOne = cva(
@@ -14,24 +14,20 @@ export const heroGlowTwo = cva(
   "pointer-events-none absolute right-[-12rem] top-28 -z-10 size-[30rem] rounded-full bg-bura/16 blur-3xl"
 )
 
-export const heroCopy = cva("flex flex-col gap-7")
-
-export const heroEyebrow = cva("text-base font-extrabold uppercase tracking-[0.22em] text-bura")
+export const heroCopy = cva("flex max-w-2xl flex-col gap-8")
 
 export const heroTitle = cva(
-  "max-w-4xl text-5xl font-black leading-[1.03] text-foreground sm:text-6xl lg:text-7xl"
+  "text-5xl font-black leading-[1.02] text-foreground sm:text-6xl lg:text-7xl"
 )
 
-export const heroDescription = cva("max-w-2xl text-lg leading-8 text-muted-foreground")
+export const heroDescription = cva("max-w-xl text-lg leading-8 text-muted-foreground")
 
-export const heroActions = cva("flex flex-col gap-3 pt-1 sm:flex-row")
-
-export const heroStatsGrid = cva("grid max-w-3xl gap-3 sm:grid-cols-3")
+export const heroActions = cva("flex flex-col gap-3 pt-2 sm:flex-row")
 
 export const heroVisual = cva("relative min-h-[33rem]")
 
 export const arenaPanel = cva(
-  "absolute inset-x-0 top-12 rounded-[2rem] border border-white/12 bg-white/8 p-6 shadow-panel backdrop-blur-xl"
+  "absolute inset-x-0 top-8 rounded-[2rem] border border-white/12 bg-white/8 p-6 shadow-panel backdrop-blur-xl"
 )
 
 export const arenaHeader = cva("flex items-center justify-between gap-4")
@@ -49,7 +45,7 @@ export const tableSurface = cva(
 export const botRow = cva("flex items-center justify-between gap-3")
 
 export const botAvatar = cva(
-  "grid size-14 place-items-center rounded-2xl border border-joker/30 bg-joker/15 text-base font-black text-joker"
+  "grid size-14 place-items-center rounded-2xl border border-bura/30 bg-bura/15 text-base font-black text-bura"
 )
 
 export const botMeta = cva("space-y-1")
