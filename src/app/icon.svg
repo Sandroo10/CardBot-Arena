@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#f8fafc"/>
+  <rect x="5" y="5" width="54" height="54" rx="10" fill="none" stroke="#c026d3" stroke-width="3"/>
+  <text x="14" y="23" fill="#c026d3" font-family="Arial, sans-serif" font-size="16" font-weight="900">J</text>
+  <text x="32" y="42" fill="#c026d3" font-family="Arial, sans-serif" font-size="22" font-weight="900" text-anchor="middle">★</text>
+  <text x="50" y="53" fill="#c026d3" font-family="Arial, sans-serif" font-size="16" font-weight="900" text-anchor="middle">J</text>
+</svg>
