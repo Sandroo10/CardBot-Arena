@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority"
 
 export const cardStyles = cva(
-  "rounded-2xl border border-white/12 bg-card/72 text-card-foreground shadow-panel backdrop-blur"
+  "rounded-2xl border border-white/12 bg-card/88 text-card-foreground shadow-[0_16px_36px_rgba(0,0,0,0.22)]"
 )
 
 export const cardHeaderStyles = cva("space-y-2 p-5")

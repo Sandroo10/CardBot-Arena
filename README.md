@@ -27,6 +27,8 @@ Hosted on vercel: https://card-bot-arena.vercel.app/
 - [x] Only Bura Easy is playable
 - [x] Other 5 bots are shown as under maintenance
 - [x] Under maintenance indicators use clear red styling
+- [x] Full leaderboard page: `/leaderboard`
+- [x] Weekly, monthly, and all-time leaderboard filters
 
 ### Left To Do
 
@@ -39,8 +41,6 @@ Hosted on vercel: https://card-bot-arena.vercel.app/
 - [ ] Profile page: `/profile`
 - [ ] Match history table
 - [ ] Achievement badges
-- [ ] Full leaderboard page: `/leaderboard`
-- [ ] Weekly, monthly, and all-time leaderboard filters
 - [ ] Final responsive polish
 - [ ] Accessibility pass
 - [ ] Final README cleanup for submission

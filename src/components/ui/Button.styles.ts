@@ -8,7 +8,7 @@ export const buttonStyles = cva(
         primary:
           "bg-primary text-primary-foreground shadow-[0_18px_44px_rgba(20,184,166,0.28)] hover:brightness-110 active:scale-[0.98]",
         secondary:
-          "border border-white/15 bg-white/10 text-foreground backdrop-blur hover:border-primary/60 hover:bg-white/15 active:scale-[0.98]",
+          "border border-white/15 bg-white/10 text-foreground hover:border-primary/60 hover:bg-white/15 active:scale-[0.98]",
         ghost: "text-muted-foreground hover:bg-white/10 hover:text-foreground"
       },
       size: {

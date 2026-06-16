@@ -5,13 +5,13 @@ export const leaderboardSection = cva("relative")
 export const leaderboardContainer = cva("space-y-8")
 
 export const leaderboardPanel = cva(
-  "grid gap-6 rounded-[2rem] border border-white/12 bg-white/8 p-5 shadow-panel backdrop-blur-xl lg:grid-cols-[0.9fr_1.1fr] lg:p-7"
+  "grid gap-6 rounded-[2rem] border border-white/12 bg-background/72 p-5 shadow-[0_22px_54px_rgba(0,0,0,0.26)] lg:grid-cols-[0.9fr_1.1fr] lg:p-7"
 )
 
 export const podiumGrid = cva("grid gap-4 sm:grid-cols-3")
 
 export const podiumCard = cva(
-  "grid min-h-[22rem] grid-rows-[3.25rem_5.25rem_8.5rem_5rem] place-items-center rounded-2xl border bg-card/72 p-5 text-center shadow-panel",
+  "grid min-h-[22rem] grid-rows-[3.25rem_5.25rem_8.5rem_5rem] place-items-center rounded-2xl border bg-card/86 p-5 text-center shadow-[0_16px_36px_rgba(0,0,0,0.22)]",
   {
     variants: {
       place: {
