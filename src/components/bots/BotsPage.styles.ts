@@ -5,8 +5,24 @@ export const botsPageShell = cva("min-h-screen py-12")
 export const botsPageContent = cva("space-y-9")
 
 export const controlsPanel = cva(
-  "rounded-[1.5rem] border border-white/10 bg-background/48 p-4 shadow-panel backdrop-blur"
+  "space-y-5 rounded-[1.5rem] border border-white/10 bg-background/48 p-5 shadow-panel backdrop-blur"
 )
+
+export const pageHeader = cva("flex flex-col gap-4 md:flex-row md:items-end md:justify-between")
+
+export const pageTitleWrap = cva("space-y-2")
+
+export const pageEyebrow = cva("text-sm font-black uppercase tracking-[0.22em] text-bura")
+
+export const pageTitle = cva("text-3xl font-black leading-tight text-foreground sm:text-4xl")
+
+export const pageDescription = cva("max-w-3xl text-base leading-7 text-muted-foreground")
+
+export const rosterSummary = cva(
+  "inline-flex w-fit items-center rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm font-black text-muted-foreground"
+)
+
+export const controlGrid = cva("grid gap-4 lg:grid-cols-[1fr_22rem]")
 
 export const filterRow = cva("flex flex-wrap gap-2")
 
@@ -27,16 +43,28 @@ export const filterButton = cva(
 
 export const searchWrap = cva("relative mt-4")
 
+export const searchWrapCompact = cva("relative")
+
 export const searchIcon = cva("pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground")
 
 export const searchInput = cva(
   "min-h-12 w-full rounded-xl border border-white/10 bg-white/8 pl-11 pr-4 text-base font-semibold text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
 )
 
+export const resultsBar = cva(
+  "flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/6 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+)
+
+export const resultsText = cva("text-sm font-bold text-muted-foreground")
+
+export const resetButton = cva(
+  "w-fit rounded-lg px-3 py-2 text-sm font-black text-primary transition hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+)
+
 export const botGrid = cva("grid gap-5 sm:grid-cols-2 lg:grid-cols-3")
 
 export const botCard = cva(
-  "group relative min-h-[22rem] overflow-hidden rounded-2xl border p-5 shadow-panel backdrop-blur transition",
+  "group relative flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border p-5 shadow-panel backdrop-blur transition",
   {
     variants: {
       status: {
@@ -75,7 +103,7 @@ export const botAvatar = cva(
 
 export const badgeStack = cva("flex flex-wrap justify-end gap-2")
 
-export const botCardBody = cva("mt-6 space-y-5")
+export const botCardBody = cva("mt-6 flex-1 space-y-5")
 
 export const botTitle = cva("text-2xl font-black text-foreground")
 
