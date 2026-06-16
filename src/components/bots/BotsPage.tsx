@@ -30,6 +30,7 @@ import {
   botStrategy,
   botText,
   botTitle,
+  controlGrid,
   controlsPanel,
   emptyState,
   emptyText,
@@ -39,9 +40,18 @@ import {
   lockedButton,
   maintenanceOverlay,
   maintenancePill,
+  pageDescription,
+  pageEyebrow,
+  pageHeader,
+  pageTitle,
+  pageTitleWrap,
+  resetButton,
+  resultsBar,
+  resultsText,
+  rosterSummary,
   searchIcon,
   searchInput,
-  searchWrap
+  searchWrapCompact
 } from "@/components/bots/BotsPage.styles"
 import { Badge, buttonStyles, Container } from "@/components/ui"
 import { bots } from "@/data/bots"
@@ -49,32 +59,64 @@ import { bots } from "@/data/bots"
 export function BotsPage() {
   const [state, dispatch] = useReducer(botsPageReducer, initialBotsPageState)
   const visibleBots = useMemo(() => filterBots(bots, state), [state])
+  const activeCount = bots.filter((bot) => bot.status === "active").length
+  const hasActiveFilters = state.filter !== "All" || state.search.trim().length > 0
 
   return (
     <main className={botsPageShell()}>
       <Container className={botsPageContent()}>
         <section className={controlsPanel()} aria-label="Bot filters">
-          <div className={filterRow()}>
-            {botFilters.map((filter) => (
+          <div className={pageHeader()}>
+            <div className={pageTitleWrap()}>
+              <p className={pageEyebrow()}>Bot roster</p>
+              <h1 className={pageTitle()}>Pick the Bura table or preview upcoming bots.</h1>
+              <p className={pageDescription()}>
+                Bura Easy is open for the current demo. The remaining Joker and Bura tiers stay visible as under-maintenance cards.
+              </p>
+            </div>
+            <p className={rosterSummary()}>
+              {activeCount} playable / {bots.length - activeCount} maintenance
+            </p>
+          </div>
+
+          <div className={controlGrid()}>
+            <div className={filterRow()}>
+              {botFilters.map((filter) => (
+                <button
+                  className={filterButton({ active: state.filter === filter })}
+                  key={filter}
+                  onClick={() => dispatch({ type: "set-filter", filter: filter as BotFilter })}
+                  type="button"
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+            <div className={searchWrapCompact()}>
+              <Search className={searchIcon()} aria-hidden="true" size={18} />
+              <input
+                className={searchInput()}
+                onChange={(event) => dispatch({ type: "set-search", search: event.target.value })}
+                placeholder="Search bots"
+                type="search"
+                value={state.search}
+              />
+            </div>
+          </div>
+
+          <div className={resultsBar()}>
+            <p className={resultsText()}>
+              Showing {visibleBots.length} of {bots.length} bots
+            </p>
+            {hasActiveFilters ? (
               <button
-                className={filterButton({ active: state.filter === filter })}
-                key={filter}
-                onClick={() => dispatch({ type: "set-filter", filter: filter as BotFilter })}
+                className={resetButton()}
+                onClick={() => dispatch({ type: "reset" })}
                 type="button"
               >
-                {filter}
+                Reset filters
               </button>
-            ))}
-          </div>
-          <div className={searchWrap()}>
-            <Search className={searchIcon()} aria-hidden="true" size={18} />
-            <input
-              className={searchInput()}
-              onChange={(event) => dispatch({ type: "set-search", search: event.target.value })}
-              placeholder="Search bots by name, game, or difficulty"
-              type="search"
-              value={state.search}
-            />
+            ) : null}
           </div>
         </section>
 
