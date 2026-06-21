@@ -5,7 +5,7 @@ export const botsPageShell = cva("min-h-screen py-12")
 export const botsPageContent = cva("space-y-9")
 
 export const controlsPanel = cva(
-  "space-y-5 rounded-[1.5rem] border border-white/10 bg-background/48 p-5 shadow-panel backdrop-blur"
+  "space-y-5 rounded-[1.5rem] border border-white/10 bg-background/78 p-5 shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
 )
 
 export const pageHeader = cva("flex flex-col gap-4 md:flex-row md:items-end md:justify-between")
@@ -48,7 +48,7 @@ export const searchWrapCompact = cva("relative")
 export const searchIcon = cva("pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground")
 
 export const searchInput = cva(
-  "min-h-12 w-full rounded-xl border border-white/10 bg-white/8 pl-11 pr-4 text-base font-semibold text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
+  "min-h-12 w-full rounded-xl border border-white/10 bg-white/8 pl-11 pr-4 text-base font-semibold text-black outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
 )
 
 export const resultsBar = cva(
@@ -64,12 +64,12 @@ export const resetButton = cva(
 export const botGrid = cva("grid gap-5 sm:grid-cols-2 lg:grid-cols-3")
 
 export const botCard = cva(
-  "group relative flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border p-5 shadow-panel backdrop-blur transition",
+  "group relative flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border p-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-colors",
   {
     variants: {
       status: {
         active:
-          "border-bura/35 bg-card/82 hover:-translate-y-1 hover:border-primary/55 hover:shadow-glow",
+          "border-bura/35 bg-card/88 hover:border-primary/55",
         maintenance: "border-white/8 bg-card/38 opacity-65 grayscale"
       },
       game: {
@@ -130,11 +130,11 @@ export const maintenanceOverlay = cva(
 )
 
 export const maintenancePill = cva(
-  "inline-flex items-center gap-2 rounded-full border border-red-300/35 bg-red-950/92 px-4 py-2 text-sm font-black text-red-100 shadow-panel"
+  "inline-flex items-center gap-2 rounded-full border border-red-300/35 bg-red-950/92 px-4 py-2 text-sm font-black text-red-100 shadow-[0_12px_28px_rgba(0,0,0,0.24)]"
 )
 
 export const emptyState = cva(
-  "rounded-[1.5rem] border border-white/10 bg-white/8 p-8 text-center shadow-panel backdrop-blur"
+  "rounded-[1.5rem] border border-white/10 bg-white/8 p-8 text-center shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
 )
 
 export const emptyTitle = cva("text-2xl font-black text-foreground")

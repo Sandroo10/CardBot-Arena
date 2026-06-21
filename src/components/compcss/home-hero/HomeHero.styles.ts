@@ -7,11 +7,11 @@ export const heroContainer = cva(
 )
 
 export const heroGlowOne = cva(
-  "pointer-events-none absolute left-[-10rem] top-12 -z-10 size-[28rem] rounded-full bg-joker/18 blur-3xl"
+  "pointer-events-none absolute left-[-10rem] top-12 -z-10 size-[22rem] rounded-full bg-joker/14 blur-2xl"
 )
 
 export const heroGlowTwo = cva(
-  "pointer-events-none absolute right-[-12rem] top-28 -z-10 size-[30rem] rounded-full bg-bura/16 blur-3xl"
+  "pointer-events-none absolute right-[-12rem] top-28 -z-10 size-[24rem] rounded-full bg-bura/12 blur-2xl"
 )
 
 export const heroCopy = cva("flex max-w-2xl flex-col gap-8")
@@ -27,7 +27,7 @@ export const heroActions = cva("flex flex-col gap-3 pt-2 sm:flex-row")
 export const heroVisual = cva("relative min-h-[33rem]")
 
 export const arenaPanel = cva(
-  "absolute inset-x-0 top-8 rounded-[2rem] border border-white/12 bg-white/8 p-6 shadow-panel backdrop-blur-xl"
+  "absolute inset-x-0 top-8 rounded-[2rem] border border-white/12 bg-background/72 p-6 shadow-[0_22px_54px_rgba(0,0,0,0.28)]"
 )
 
 export const arenaHeader = cva("flex items-center justify-between gap-4")
@@ -55,7 +55,7 @@ export const botName = cva("font-extrabold text-foreground")
 export const botSubtext = cva("text-sm font-semibold text-muted-foreground")
 
 export const scoreChip = cva(
-  "rounded-2xl border border-white/12 bg-background/70 px-4 py-3 text-center shadow-glow"
+  "rounded-2xl border border-white/12 bg-background/82 px-4 py-3 text-center shadow-[0_12px_28px_rgba(0,0,0,0.22)]"
 )
 
 export const scoreLabel = cva("text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground")
@@ -90,18 +90,3 @@ export const handCard = cva(
   "h-24 w-16 rounded-xl border border-white/15 bg-gradient-to-br from-slate-800 to-slate-950 shadow-[0_16px_34px_rgba(0,0,0,0.35)]"
 )
 
-export const floatingBotCard = cva(
-  "absolute bottom-0 left-4 max-w-64 rounded-2xl border border-bura/25 bg-bura/10 p-4 shadow-panel backdrop-blur-xl"
-)
-
-export const floatingBotTitle = cva("text-base font-black text-foreground")
-
-export const floatingBotText = cva("mt-1 text-sm leading-6 text-muted-foreground")
-
-export const floatingReward = cva(
-  "absolute right-0 top-2 rounded-2xl border border-primary/30 bg-primary/15 px-5 py-4 text-primary shadow-glow backdrop-blur lg:-right-6 lg:top-4 xl:-right-10"
-)
-
-export const floatingRewardLabel = cva("text-xs font-black uppercase tracking-[0.18em]")
-
-export const floatingRewardValue = cva("mt-1 text-3xl font-black")

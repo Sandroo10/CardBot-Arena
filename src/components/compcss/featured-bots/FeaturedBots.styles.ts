@@ -9,16 +9,16 @@ export const featuredHeaderRow = cva(
 )
 
 export const featuredSpotlight = cva(
-  "grid gap-6 rounded-[2rem] border border-white/12 bg-white/8 p-5 shadow-panel backdrop-blur-xl lg:grid-cols-[0.85fr_1.15fr] lg:p-7"
+  "grid gap-6 rounded-[2rem] border border-white/12 bg-background/72 p-5 shadow-[0_22px_54px_rgba(0,0,0,0.26)] lg:grid-cols-[0.85fr_1.15fr] lg:p-7"
 )
 
 export const botCard = cva(
-  "group relative min-h-[20rem] overflow-hidden rounded-2xl border p-5 shadow-panel backdrop-blur transition",
+  "group relative min-h-[20rem] overflow-hidden rounded-2xl border p-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-colors",
   {
     variants: {
       status: {
         active:
-          "border-white/12 bg-card/78 hover:-translate-y-1 hover:border-primary/45 hover:shadow-glow",
+          "border-white/12 bg-card/88 hover:border-primary/45",
         maintenance: "border-white/8 bg-card/40 opacity-70 grayscale"
       },
       game: {
@@ -50,7 +50,7 @@ export const spotlightCardRank = cva("text-3xl font-black")
 export const spotlightCardSuit = cva("text-sm font-black uppercase tracking-[0.16em]")
 
 export const spotlightBotBubble = cva(
-  "absolute left-5 top-5 max-w-56 rounded-2xl border border-white/12 bg-background/68 p-4 backdrop-blur"
+  "absolute left-5 top-5 max-w-56 rounded-2xl border border-white/12 bg-background/86 p-4"
 )
 
 export const spotlightBotBubbleTitle = cva("text-base font-black text-foreground")
@@ -105,5 +105,5 @@ export const maintenanceOverlay = cva(
 )
 
 export const maintenancePill = cva(
-  "rounded-full border border-white/12 bg-background/90 px-4 py-2 text-sm font-black text-muted-foreground shadow-panel"
+  "rounded-full border border-white/12 bg-background/90 px-4 py-2 text-sm font-black text-muted-foreground shadow-[0_12px_28px_rgba(0,0,0,0.24)]"
 )

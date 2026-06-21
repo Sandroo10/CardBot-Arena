@@ -13,12 +13,6 @@ import {
   botSubtext,
   cardRank,
   cardSuit,
-  floatingBotCard,
-  floatingBotText,
-  floatingBotTitle,
-  floatingReward,
-  floatingRewardLabel,
-  floatingRewardValue,
   handCard,
   handRow,
   heroActions,
@@ -93,16 +87,6 @@ export function HomeHero() {
             </div>
           </div>
 
-          <div className={floatingBotCard()}>
-            <p className={floatingBotTitle()}>Beginner-friendly bots</p>
-            <p className={floatingBotText()}>
-              Easy tables are open now. Medium and Hard tiers stay visible as upcoming content.
-            </p>
-          </div>
-          <div className={floatingReward()}>
-            <p className={floatingRewardLabel()}>Win reward</p>
-            <p className={floatingRewardValue()}>+1</p>
-          </div>
         </div>
       </Container>
     </section>
