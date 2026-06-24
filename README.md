@@ -32,11 +32,11 @@ Hosted on vercel: https://card-bot-arena.vercel.app/
 - [x] Profile page: `/profile`
 - [x] Match history table
 - [x] Achievement badges
+- [x] Bot detail page: `/bots/[id]`
+- [x] Safe locked-bot detail handling
 
 ### Left To Do
 
-- [ ] Bot detail page: `/bots/[id]`
-- [ ] Safe locked-bot detail handling
 - [ ] Play page: `/play/[botId]`
 - [ ] Visual gameplay board for Bura Easy
 - [ ] Simple match result modal
