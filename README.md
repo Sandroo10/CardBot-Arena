@@ -2,9 +2,9 @@
 
 Contributions: 
 
-Sandro Saralidze - Developed the NEXT.JS initial setup and main/landing page, following the coding patterns of react/next for good architecture
+Sandro Saralidze - Developed the NEXT.JS initial setup and main/landing page, following the coding patterns of react/next for good architecture.
 
-Teimuraz Futkaradze - Researched and gave final design options From figma, dribble and etc. as well as color palletes. Reviewing the design changes.
+Teimuraz Futkaradze - Researched and gave final design options From figma, dribble and etc. as well as color palletes. Reviewing the design changes and PRs.
 
 Hosted on vercel: https://card-bot-arena.vercel.app/
 
@@ -29,6 +29,9 @@ Hosted on vercel: https://card-bot-arena.vercel.app/
 - [x] Under maintenance indicators use clear red styling
 - [x] Full leaderboard page: `/leaderboard`
 - [x] Weekly, monthly, and all-time leaderboard filters
+- [x] Profile page: `/profile`
+- [x] Match history table
+- [x] Achievement badges
 
 ### Left To Do
 
@@ -38,9 +41,6 @@ Hosted on vercel: https://card-bot-arena.vercel.app/
 - [ ] Visual gameplay board for Bura Easy
 - [ ] Simple match result modal
 - [ ] LocalStorage progress system
-- [ ] Profile page: `/profile`
-- [ ] Match history table
-- [ ] Achievement badges
 - [ ] Final responsive polish
 - [ ] Accessibility pass
 - [ ] Final README cleanup for submission
