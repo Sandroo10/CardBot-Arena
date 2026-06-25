@@ -34,13 +34,21 @@ Hosted on vercel: https://card-bot-arena.vercel.app/
 - [x] Achievement badges
 - [x] Bot detail page: `/bots/[id]`
 - [x] Safe locked-bot detail handling
+- [x] Play page: `/play/[botId]`
+- [x] Visual gameplay board for Bura Easy
+- [x] Simple match result modal
+- [x] LocalStorage progress system
+- [x] Final responsive polish
+- [x] Accessibility pass
+- [x] Final README cleanup for submission
 
-### Left To Do
+### Final Scope
 
-- [ ] Play page: `/play/[botId]`
-- [ ] Visual gameplay board for Bura Easy
-- [ ] Simple match result modal
-- [ ] LocalStorage progress system
-- [ ] Final responsive polish
-- [ ] Accessibility pass
-- [ ] Final README cleanup for submission
+CardBot Arena is a UI/UX-focused final project. The application includes a polished home page, bot roster, bot detail pages, a visual Bura Easy play table, local profile progress, and leaderboard/profile presentation routes. Only Bura Easy is playable in the current demo; the remaining bots are intentionally visible as under-maintenance previews.
+
+### Run Locally
+
+```bash
+npm install
+npm run dev
+```

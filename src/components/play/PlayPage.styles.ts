@@ -1,0 +1,133 @@
+import { cva } from "class-variance-authority"
+
+export const playShell = cva("min-h-screen py-8 sm:py-12")
+
+export const playContent = cva("space-y-6")
+
+export const playHeader = cva(
+  "flex flex-col gap-4 rounded-[1.5rem] border border-white/10 bg-background/78 p-5 shadow-[0_18px_42px_rgba(0,0,0,0.22)] md:flex-row md:items-center md:justify-between"
+)
+
+export const headerCopy = cva("space-y-2")
+
+export const playEyebrow = cva("text-sm font-black uppercase tracking-[0.22em] text-bura")
+
+export const playTitle = cva("text-3xl font-black leading-tight text-foreground sm:text-4xl")
+
+export const playDescription = cva("max-w-2xl text-base leading-7 text-muted-foreground")
+
+export const headerActions = cva("flex flex-wrap gap-3")
+
+export const boardGrid = cva("grid gap-6 xl:grid-cols-[1fr_22rem]")
+
+export const boardPanel = cva(
+  "rounded-[1.75rem] border border-white/10 bg-card/70 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.2)] sm:p-6"
+)
+
+export const lockedPanel = cva(
+  "rounded-[1.75rem] border border-red-300/25 bg-red-950/35 p-6 text-center shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
+)
+
+export const lockedIcon = cva(
+  "mx-auto grid size-16 place-items-center rounded-2xl border border-red-300/30 bg-red-500/10 text-red-100"
+)
+
+export const lockedTitle = cva("mt-4 text-3xl font-black text-foreground")
+
+export const lockedText = cva("mx-auto mt-3 max-w-xl text-base leading-7 text-red-100/78")
+
+export const tableSurface = cva(
+  "relative grid min-h-[34rem] gap-5 overflow-hidden rounded-[1.35rem] border border-bura/25 bg-background/72 p-4 sm:p-6"
+)
+
+export const playerZone = cva("space-y-3")
+
+export const zoneHeader = cva("flex items-center justify-between gap-4")
+
+export const zoneTitle = cva("text-sm font-black uppercase tracking-[0.18em] text-muted-foreground")
+
+export const zoneScore = cva("rounded-full border border-white/10 bg-white/8 px-3 py-1 text-sm font-black text-foreground")
+
+export const botHand = cva("flex justify-center gap-2 sm:gap-4")
+
+export const centerTable = cva(
+  "grid min-h-44 place-items-center rounded-[1.25rem] border border-white/10 bg-white/6 p-4"
+)
+
+export const centerCards = cva("flex items-center justify-center gap-3 sm:gap-5")
+
+export const playerHand = cva("flex flex-wrap justify-center gap-3 sm:gap-5")
+
+export const playCard = cva(
+  "grid h-32 w-22 content-between rounded-2xl border bg-zinc-100 p-3 text-slate-950 shadow-[0_12px_24px_rgba(0,0,0,0.22)] sm:h-36 sm:w-24",
+  {
+    variants: {
+      tone: {
+        bura: "border-bura",
+        joker: "border-joker",
+        neutral: "border-sky-400"
+      },
+      size: {
+        normal: "",
+        hidden: "bg-slate-900 text-foreground"
+      }
+    },
+    defaultVariants: {
+      tone: "neutral",
+      size: "normal"
+    }
+  }
+)
+
+export const cardTop = cva("flex items-start justify-between gap-2 text-3xl font-black")
+
+export const cardSuit = cva("text-lg")
+
+export const cardLabel = cva("text-center text-xs font-black uppercase tracking-[0.2em]")
+
+export const sidePanel = cva("space-y-5")
+
+export const infoPanel = cva(
+  "rounded-[1.5rem] border border-white/10 bg-background/72 p-5 shadow-[0_16px_34px_rgba(0,0,0,0.2)]"
+)
+
+export const panelTitle = cva("text-xl font-black text-foreground")
+
+export const panelText = cva("mt-2 text-sm font-semibold leading-6 text-muted-foreground")
+
+export const stepsList = cva("mt-4 grid gap-3")
+
+export const stepItem = cva("flex gap-3 rounded-xl border border-white/10 bg-white/7 p-3 text-sm font-semibold text-muted-foreground")
+
+export const stepNumber = cva("grid size-7 shrink-0 place-items-center rounded-lg bg-primary text-sm font-black text-primary-foreground")
+
+export const resultActions = cva("mt-5 grid gap-3")
+
+export const modalBackdrop = cva(
+  "fixed inset-0 z-50 grid place-items-center bg-black/72 p-4"
+)
+
+export const resultDialog = cva(
+  "w-full max-w-md rounded-[1.5rem] border border-white/10 bg-background p-6 shadow-[0_24px_60px_rgba(0,0,0,0.36)]"
+)
+
+export const dialogIcon = cva(
+  "grid size-16 place-items-center rounded-2xl border",
+  {
+    variants: {
+      result: {
+        Win: "border-success/35 bg-success/15 text-success",
+        Loss: "border-red-400/35 bg-red-500/12 text-red-100"
+      }
+    },
+    defaultVariants: {
+      result: "Win"
+    }
+  }
+)
+
+export const dialogTitle = cva("mt-5 text-3xl font-black text-foreground")
+
+export const dialogText = cva("mt-2 text-base leading-7 text-muted-foreground")
+
+export const dialogActions = cva("mt-6 flex flex-wrap gap-3")

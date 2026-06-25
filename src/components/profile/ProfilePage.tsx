@@ -1,4 +1,7 @@
-import { Crown, Flame, HardDrive, Medal, Trophy } from "lucide-react"
+"use client"
+
+import { Crown, Flame, HardDrive, Medal, RotateCcw, Trophy } from "lucide-react"
+import { useEffect, useState } from "react"
 
 import {
   getAchievementIcon,
@@ -46,8 +49,9 @@ import {
   resultBadge,
   statsGrid
 } from "@/components/profile/ProfilePage.styles"
-import { Container, StatCard } from "@/components/ui"
+import { Button, Container, StatCard } from "@/components/ui"
 import { defaultUserProfile } from "@/data/profile"
+import { clearLocalProgress, readLocalProfile } from "@/lib/progress-storage"
 
 const achievementIcons = {
   trophy: Trophy,
@@ -57,8 +61,28 @@ const achievementIcons = {
 }
 
 export function ProfilePage() {
-  const profile = defaultUserProfile
+  const [profile, setProfile] = useState(defaultUserProfile)
   const winRate = getWinRate(profile)
+
+  useEffect(() => {
+    function syncProfile() {
+      setProfile(readLocalProfile(defaultUserProfile))
+    }
+
+    syncProfile()
+    window.addEventListener("cardbot-progress-change", syncProfile)
+    window.addEventListener("storage", syncProfile)
+
+    return () => {
+      window.removeEventListener("cardbot-progress-change", syncProfile)
+      window.removeEventListener("storage", syncProfile)
+    }
+  }, [])
+
+  function resetProgress() {
+    clearLocalProgress()
+    setProfile(readLocalProfile(defaultUserProfile))
+  }
 
   return (
     <main className={profileShell()}>
@@ -151,6 +175,10 @@ export function ProfilePage() {
               <HardDrive aria-hidden="true" size={17} />
               Progress saved locally on this device.
             </p>
+            <Button intent="ghost" size="sm" onClick={resetProgress}>
+              <RotateCcw aria-hidden="true" size={16} />
+              Reset local
+            </Button>
           </div>
 
           <div className={historyTable()}>

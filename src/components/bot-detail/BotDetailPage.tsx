@@ -117,10 +117,10 @@ export function BotDetailPage({ bot }: BotDetailPageProps) {
 
             <div className={actionRow()}>
               {isActive ? (
-                <span className={disabledAction()}>
+                <Link className={buttonStyles({ intent: "primary", size: "md" })} href={`/play/${bot.id}`}>
                   <Swords aria-hidden="true" size={18} />
-                  Play table next push
-                </span>
+                  Play table
+                </Link>
               ) : (
                 <span className={disabledAction()}>
                   <Lock aria-hidden="true" size={18} />
