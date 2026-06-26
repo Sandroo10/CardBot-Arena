@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority"
 export const heroSection = cva("relative isolate pt-12")
 
 export const heroContainer = cva(
-  "grid min-h-[calc(100vh-9rem)] items-center gap-14 py-16 lg:grid-cols-[0.88fr_1.12fr]"
+  "grid min-h-[calc(100vh-9rem)] items-center gap-14 py-16 pb-24 lg:grid-cols-[0.88fr_1.12fr]"
 )
 
 export const heroGlowOne = cva(
@@ -89,4 +89,10 @@ export const handRow = cva("flex justify-center gap-3")
 export const handCard = cva(
   "h-24 w-16 rounded-xl border border-white/15 bg-gradient-to-br from-slate-800 to-slate-950 shadow-[0_16px_34px_rgba(0,0,0,0.35)]"
 )
+
+export const scrollCue = cva(
+  "absolute bottom-6 left-1/2 z-10 grid size-12 -translate-x-1/2 place-items-center rounded-full border border-white/15 bg-white/10 text-foreground shadow-[0_14px_34px_rgba(0,0,0,0.24)] transition hover:border-primary/50 hover:bg-primary/15 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+)
+
+export const scrollCueIcon = cva("animate-bounce")
 

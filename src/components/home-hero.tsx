@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ArrowDown } from "lucide-react"
 
 import { floatingCards } from "@/components/compcss/home-hero/HomeHero.helpers"
 import {
@@ -29,6 +30,8 @@ import {
   scoreChip,
   scoreLabel,
   scoreValue,
+  scrollCue,
+  scrollCueIcon,
   tableSurface
 } from "@/components/compcss/home-hero/HomeHero.styles"
 import { homePageCopy } from "@/components/home/HomePage.helpers"
@@ -89,6 +92,9 @@ export function HomeHero() {
 
         </div>
       </Container>
+      <Link aria-label="Scroll to featured bot section" className={scrollCue()} href="#featured-bot">
+        <ArrowDown aria-hidden="true" className={scrollCueIcon()} size={22} />
+      </Link>
     </section>
   )
 }

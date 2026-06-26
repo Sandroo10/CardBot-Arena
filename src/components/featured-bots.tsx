@@ -45,7 +45,7 @@ export function FeaturedBots() {
   const isActive = bot.status === "active"
 
   return (
-    <section className={featuredSection()}>
+    <section className={featuredSection()} id="featured-bot" >
       <Container className={featuredContainer()}>
         <div className={featuredHeaderRow()}>
           <SectionHeader

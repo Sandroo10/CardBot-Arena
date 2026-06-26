@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority"
 
-export const featuredSection = cva("relative")
+export const featuredSection = cva("relative scroll-mt-32")
 
 export const featuredContainer = cva("space-y-8")
 
