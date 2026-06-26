@@ -43,3 +43,23 @@ export function getAchievementIcon(achievement: Achievement) {
 
   return iconById[achievement.id] ?? "trophy"
 }
+
+export function getAchievementProgressValue(achievement: Achievement) {
+  if (achievement.unlocked) {
+    return 100
+  }
+
+  if (!achievement.progress) {
+    return 0
+  }
+
+  const [currentValue, targetValue] = achievement.progress
+    .split("/")
+    .map((value) => Number(value.trim()))
+
+  if (!currentValue || !targetValue) {
+    return 0
+  }
+
+  return Math.min(100, Math.round((currentValue / targetValue) * 100))
+}

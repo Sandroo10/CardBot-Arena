@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, Lock, RotateCcw, Trophy, XCircle } from "lucide-react"
+import { ArrowLeft, Lock, RotateCcw, Trophy, X, XCircle } from "lucide-react"
 import { useReducer } from "react"
 
 import {
@@ -22,6 +22,7 @@ import {
   centerCards,
   centerTable,
   dialogActions,
+  dialogClose,
   dialogIcon,
   dialogText,
   dialogTitle,
@@ -32,11 +33,13 @@ import {
   lockedPanel,
   lockedText,
   lockedTitle,
+  lossButton,
   modalBackdrop,
   panelText,
   panelTitle,
   playCard,
   playContent,
+  playableCardButton,
   playDescription,
   playEyebrow,
   playerHand,
@@ -50,6 +53,7 @@ import {
   stepItem,
   stepNumber,
   stepsList,
+  tableProgress,
   tableSurface,
   zoneHeader,
   zoneScore,
@@ -65,6 +69,7 @@ type PlayPageProps = {
 
 type PlayState = {
   result: MatchHistory | null
+  selectedCardId: string
 }
 
 type PlayAction =
@@ -75,9 +80,14 @@ type PlayAction =
   | {
       type: "reset"
     }
+  | {
+      type: "select-card"
+      cardId: string
+    }
 
 const initialPlayState: PlayState = {
-  result: null
+  result: null,
+  selectedCardId: "player-ten"
 }
 
 function playReducer(state: PlayState, action: PlayAction): PlayState {
@@ -89,14 +99,27 @@ function playReducer(state: PlayState, action: PlayAction): PlayState {
       }
     case "reset":
       return initialPlayState
+    case "select-card":
+      return {
+        ...state,
+        selectedCardId: action.cardId
+      }
     default:
       return state
   }
 }
 
-function CardView({ card, hidden = false }: { card: TableCard; hidden?: boolean }) {
+function CardView({
+  card,
+  hidden = false,
+  selected = false
+}: {
+  card: TableCard
+  hidden?: boolean
+  selected?: boolean
+}) {
   return (
-    <div className={playCard({ tone: card.tone, size: hidden ? "hidden" : "normal" })}>
+    <div className={playCard({ tone: card.tone, size: hidden ? "hidden" : "normal", selected })}>
       <div className={cardTop()}>
         <span>{card.rank}</span>
         <span className={cardSuit()}>{card.suit}</span>
@@ -150,7 +173,7 @@ export function PlayPage({ bot }: PlayPageProps) {
         <section className={playHeader()}>
           <div className={headerCopy()}>
             <p className={playEyebrow()}>Live table</p>
-            <h1 className={playTitle()}>{bot.name} practice board</h1>
+            <h1 className={playTitle()}>{bot.name} practice board (non-playable just display)</h1>
             <p className={playDescription()}>
               A polished Bura table preview with local match saving, result feedback, and readable card zones.
             </p>
@@ -166,6 +189,7 @@ export function PlayPage({ bot }: PlayPageProps) {
         <section className={boardGrid()} aria-label="Bura Easy board">
           <div className={boardPanel()}>
             <div className={tableSurface()}>
+              <p className={tableProgress()}>Step 2 of 3 / Choose your answer card</p>
               <div className={playerZone()}>
                 <div className={zoneHeader()}>
                   <p className={zoneTitle()}>Bura Easy Bot</p>
@@ -193,7 +217,15 @@ export function PlayPage({ bot }: PlayPageProps) {
                 </div>
                 <div className={playerHand()} aria-label="Player hand">
                   {playerCards.map((card) => (
-                    <CardView card={card} key={card.id} />
+                    <button
+                      aria-pressed={state.selectedCardId === card.id}
+                      className={playableCardButton()}
+                      key={card.id}
+                      onClick={() => dispatch({ type: "select-card", cardId: card.id })}
+                      type="button"
+                    >
+                      <CardView card={card} selected={state.selectedCardId === card.id} />
+                    </button>
                   ))}
                 </div>
               </div>
@@ -226,7 +258,11 @@ export function PlayPage({ bot }: PlayPageProps) {
                   <Trophy aria-hidden="true" size={18} />
                   Save win
                 </Button>
-                <Button intent="secondary" onClick={() => finishMatch("Loss")}>
+                <Button
+                  className={lossButton()}
+                  intent="secondary"
+                  onClick={() => finishMatch("Loss")}
+                >
                   <XCircle aria-hidden="true" size={18} />
                   Save loss
                 </Button>
@@ -240,9 +276,17 @@ export function PlayPage({ bot }: PlayPageProps) {
             <section
               aria-labelledby="match-result-title"
               aria-modal="true"
-              className={resultDialog()}
+              className={resultDialog({ result: state.result.result })}
               role="dialog"
             >
+              <button
+                aria-label="Close result modal"
+                className={dialogClose()}
+                onClick={() => dispatch({ type: "reset" })}
+                type="button"
+              >
+                <X aria-hidden="true" size={18} />
+              </button>
               <div className={dialogIcon({ result: state.result.result })}>
                 {state.result.result === "Win" ? (
                   <Trophy aria-hidden="true" size={28} />

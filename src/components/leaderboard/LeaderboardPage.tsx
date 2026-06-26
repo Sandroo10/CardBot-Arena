@@ -1,5 +1,6 @@
 "use client"
 
+import { Crown } from "lucide-react"
 import { useMemo, useState } from "react"
 
 import {
@@ -10,6 +11,7 @@ import {
 } from "@/components/leaderboard/LeaderboardPage.helpers"
 import {
   changeText,
+  crownIcon,
   leaderboardContent,
   leaderboardPanel,
   leaderboardShell,
@@ -97,7 +99,7 @@ export function LeaderboardPage() {
           <div className={summaryCard()}>
             <p className={summaryLabel()}>Period</p>
             <p className={summaryValue()}>{period}</p>
-            <p className={summaryMeta()}>Mock data for final project UI</p>
+            <p className={summaryMeta()}>Leaderboard updates after saved matches</p>
           </div>
         </section>
 
@@ -105,6 +107,9 @@ export function LeaderboardPage() {
           <div className={podiumGrid()}>
             {podiumPlayers.map((player, index) => (
               <article className={podiumCard({ place: podiumPlaces[index] })} key={player.id}>
+                {index === 0 ? (
+                  <Crown aria-hidden="true" className={crownIcon()} size={22} />
+                ) : null}
                 <div className={podiumRank({ place: podiumPlaces[index] })}>#{index + 1}</div>
                 <div className={podiumAvatar()}>{player.name.slice(0, 2)}</div>
                 <div className={podiumIdentity()}>

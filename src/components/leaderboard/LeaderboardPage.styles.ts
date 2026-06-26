@@ -34,13 +34,13 @@ export const periodButton = cva(
 )
 
 export const leaderboardPanel = cva(
-  "grid gap-6 rounded-[2rem] border border-white/12 bg-background/72 p-5 shadow-[0_22px_54px_rgba(0,0,0,0.26)] lg:grid-cols-[0.95fr_1.05fr] lg:p-7"
+  "grid gap-6 rounded-[2rem] bg-background/64 p-5 shadow-[0_18px_42px_rgba(0,0,0,0.2)] lg:grid-cols-[0.95fr_1.05fr] lg:p-7"
 )
 
 export const podiumGrid = cva("grid gap-4 sm:grid-cols-3")
 
 export const podiumCard = cva(
-  "grid min-h-[22rem] grid-rows-[3.25rem_5.25rem_8.5rem_5rem] place-items-center rounded-2xl border bg-card/86 p-5 text-center shadow-[0_16px_36px_rgba(0,0,0,0.22)]",
+  "relative grid min-h-[22rem] grid-rows-[3.25rem_5.25rem_8.5rem_5rem] place-items-center rounded-2xl border bg-card/82 p-5 text-center shadow-[0_14px_30px_rgba(0,0,0,0.18)]",
   {
     variants: {
       place: {
@@ -68,6 +68,8 @@ export const podiumRank = cva("grid size-12 place-items-center rounded-2xl text-
   }
 })
 
+export const crownIcon = cva("absolute right-4 top-4 text-primary")
+
 export const podiumAvatar = cva(
   "grid size-16 place-items-center rounded-2xl border border-white/12 bg-white/10 text-xl font-black text-foreground"
 )
@@ -76,16 +78,16 @@ export const podiumIdentity = cva("self-center")
 
 export const podiumName = cva("text-xl font-black text-foreground")
 
-export const podiumMeta = cva("mt-1 text-sm font-semibold text-muted-foreground")
+export const podiumMeta = cva("mt-1 text-sm font-bold text-slate-300")
 
 export const podiumPoints = cva("self-start text-center text-3xl font-black leading-none text-primary")
 
 export const podiumPointsUnit = cva("mt-2 block")
 
-export const tablePanel = cva("overflow-hidden rounded-2xl border border-white/10 bg-background/42")
+export const tablePanel = cva("overflow-hidden rounded-2xl bg-background/46 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]")
 
 export const tableHeader = cva(
-  "grid grid-cols-[3.25rem_1fr_5rem] gap-3 border-b border-white/10 px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-muted-foreground sm:grid-cols-[3.25rem_1fr_5rem_5rem_5rem]"
+  "grid grid-cols-[3.25rem_1fr_5rem] gap-3 border-b border-white/8 px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-slate-300 sm:grid-cols-[3.25rem_1fr_5rem_5rem_5rem]"
 )
 
 export const tableHeaderRight = cva("text-right")
@@ -93,7 +95,7 @@ export const tableHeaderRight = cva("text-right")
 export const tableHeaderOptional = cva("hidden text-right sm:block")
 
 export const tableRow = cva(
-  "grid grid-cols-[3.25rem_1fr_5rem] items-center gap-3 border-b border-white/8 px-4 py-4 last:border-b-0 sm:grid-cols-[3.25rem_1fr_5rem_5rem_5rem]",
+  "grid grid-cols-[3.25rem_1fr_5rem] items-center gap-3 border-b border-white/6 px-4 py-4 last:border-b-0 sm:grid-cols-[3.25rem_1fr_5rem_5rem_5rem]",
   {
     variants: {
       current: {
@@ -113,7 +115,7 @@ export const playerCell = cva("min-w-0")
 
 export const playerName = cva("truncate font-black text-foreground")
 
-export const playerMeta = cva("text-sm font-semibold text-muted-foreground")
+export const playerMeta = cva("text-sm font-semibold text-slate-300")
 
 export const valueText = cva("text-right text-base font-black text-primary")
 

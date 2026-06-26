@@ -18,7 +18,7 @@ export const playDescription = cva("max-w-2xl text-base leading-7 text-muted-for
 
 export const headerActions = cva("flex flex-wrap gap-3")
 
-export const boardGrid = cva("grid gap-6 xl:grid-cols-[1fr_22rem]")
+export const boardGrid = cva("grid gap-5 xl:grid-cols-[minmax(0,1fr)_18rem]")
 
 export const boardPanel = cva(
   "rounded-[1.75rem] border border-white/10 bg-card/70 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.2)] sm:p-6"
@@ -37,7 +37,11 @@ export const lockedTitle = cva("mt-4 text-3xl font-black text-foreground")
 export const lockedText = cva("mx-auto mt-3 max-w-xl text-base leading-7 text-red-100/78")
 
 export const tableSurface = cva(
-  "relative grid min-h-[34rem] gap-5 overflow-hidden rounded-[1.35rem] border border-bura/25 bg-background/72 p-4 sm:p-6"
+  "relative grid min-h-[34rem] gap-5 overflow-hidden rounded-[1.35rem] border border-bura/25 bg-background/72 p-4 pt-16 sm:p-6 sm:pt-16"
+)
+
+export const tableProgress = cva(
+  "absolute left-4 top-4 rounded-full border border-primary/25 bg-primary/12 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-primary sm:left-6 sm:top-6"
 )
 
 export const playerZone = cva("space-y-3")
@@ -70,13 +74,22 @@ export const playCard = cva(
       size: {
         normal: "",
         hidden: "bg-slate-900 text-foreground"
+      },
+      selected: {
+        true: "translate-y-[-0.35rem] ring-4 ring-primary/35",
+        false: ""
       }
     },
     defaultVariants: {
       tone: "neutral",
-      size: "normal"
+      size: "normal",
+      selected: false
     }
   }
+)
+
+export const playableCardButton = cva(
+  "rounded-2xl transition hover:-translate-y-1 hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"
 )
 
 export const cardTop = cva("flex items-start justify-between gap-2 text-3xl font-black")
@@ -103,12 +116,31 @@ export const stepNumber = cva("grid size-7 shrink-0 place-items-center rounded-l
 
 export const resultActions = cva("mt-5 grid gap-3")
 
+export const lossButton = cva(
+  "border border-red-300/28 bg-red-950/36 text-red-100 hover:border-red-300/42 hover:bg-red-900/42"
+)
+
 export const modalBackdrop = cva(
-  "fixed inset-0 z-50 grid place-items-center bg-black/72 p-4"
+  "fixed inset-0 z-50 grid place-items-center bg-black/88 p-4"
 )
 
 export const resultDialog = cva(
-  "w-full max-w-md rounded-[1.5rem] border border-white/10 bg-background p-6 shadow-[0_24px_60px_rgba(0,0,0,0.36)]"
+  "relative w-full max-w-md rounded-[1.5rem] border p-6 shadow-[0_24px_60px_rgba(0,0,0,0.36)]",
+  {
+    variants: {
+      result: {
+        Win: "border-success/22 bg-[linear-gradient(135deg,rgba(34,197,94,0.14),hsl(var(--background))_22%)]",
+        Loss: "border-red-300/22 bg-[linear-gradient(135deg,rgba(185,28,28,0.18),hsl(var(--background))_22%)]"
+      }
+    },
+    defaultVariants: {
+      result: "Win"
+    }
+  }
+)
+
+export const dialogClose = cva(
+  "absolute right-4 top-4 grid size-9 place-items-center rounded-full text-muted-foreground transition hover:bg-white/10 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
 )
 
 export const dialogIcon = cva(

@@ -12,21 +12,21 @@ export const playerCards: TableCard[] = [
   {
     id: "player-ace",
     rank: "A",
-    suit: "♠",
+    suit: "S",
     label: "Arena",
     tone: "bura"
   },
   {
     id: "player-ten",
     rank: "10",
-    suit: "♦",
+    suit: "D",
     label: "Bura",
     tone: "neutral"
   },
   {
     id: "player-king",
     rank: "K",
-    suit: "♣",
+    suit: "C",
     label: "Hold",
     tone: "neutral"
   }
@@ -60,14 +60,14 @@ export const tableCards: TableCard[] = [
   {
     id: "table-jack",
     rank: "J",
-    suit: "♥",
+    suit: "H",
     label: "Lead",
     tone: "joker"
   },
   {
     id: "table-ten",
     rank: "10",
-    suit: "♠",
+    suit: "S",
     label: "Answer",
     tone: "bura"
   }

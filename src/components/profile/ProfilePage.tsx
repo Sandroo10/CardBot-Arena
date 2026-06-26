@@ -4,6 +4,7 @@ import { Crown, Flame, HardDrive, Medal, RotateCcw, Trophy } from "lucide-react"
 import { useEffect, useState } from "react"
 
 import {
+  getAchievementProgressValue,
   getAchievementIcon,
   getWinRate,
   profileStats
@@ -14,6 +15,8 @@ import {
   achievementGrid,
   achievementIcon,
   achievementProgress,
+  achievementProgressFill,
+  achievementProgressTrack,
   achievementText,
   achievementTitle,
   historyBot,
@@ -142,6 +145,7 @@ export function ProfilePage() {
             <div className={achievementGrid()}>
               {profile.achievements.map((achievement) => {
                 const Icon = achievementIcons[getAchievementIcon(achievement)]
+                const progressValue = getAchievementProgressValue(achievement)
 
                 return (
                   <article
@@ -152,10 +156,27 @@ export function ProfilePage() {
                       <Icon aria-hidden="true" size={21} />
                     </div>
                     <div className={achievementBody()}>
-                      <h3 className={achievementTitle()}>{achievement.title}</h3>
+                      <h3 className={achievementTitle({ unlocked: achievement.unlocked })}>
+                        {achievement.title}
+                      </h3>
                       <p className={achievementText()}>{achievement.description}</p>
                       {achievement.progress ? (
-                        <p className={achievementProgress()}>{achievement.progress}</p>
+                        <>
+                          <p className={achievementProgress()}>{achievement.progress}</p>
+                          <div
+                            aria-label={`${achievement.title} progress`}
+                            aria-valuemax={100}
+                            aria-valuemin={0}
+                            aria-valuenow={progressValue}
+                            className={achievementProgressTrack()}
+                            role="progressbar"
+                          >
+                            <div
+                              className={achievementProgressFill()}
+                              style={{ width: `${progressValue}%` }}
+                            />
+                          </div>
+                        </>
                       ) : null}
                     </div>
                   </article>
