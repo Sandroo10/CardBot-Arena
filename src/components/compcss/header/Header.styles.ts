@@ -5,7 +5,7 @@ export const headerRoot = cva(
 )
 
 export const headerInner = cva(
-  "mx-auto flex min-h-20 w-full max-w-6xl items-center justify-between gap-4 px-6 sm:px-8 lg:px-12"
+  "mx-auto flex min-h-20 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-8 lg:px-12"
 )
 
 export const logoLink = cva(
@@ -20,7 +20,7 @@ export const logoCardRank = cva("absolute left-1.5 top-1 text-sm font-black text
 
 export const logoCardCenter = cva("text-lg font-black text-joker")
 
-export const logoText = cva("text-lg font-black text-foreground sm:text-xl")
+export const logoText = cva("text-base font-black text-foreground sm:text-xl")
 
 export const desktopNav = cva("hidden items-center gap-2 md:flex")
 

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { Menu, UserRound, X } from "lucide-react"
 import { useState } from "react"
 
-import { isActiveRoute, navItems } from "@/components/compcss/header/Header.helpers"
+import { isActiveRoute, mobileNavItems, navItems } from "@/components/compcss/header/Header.helpers"
 import {
   avatarLink,
   desktopNav,
@@ -74,7 +74,7 @@ export function Header() {
       {isMenuOpen ? (
         <nav className={mobileNav()} aria-label="Mobile navigation">
           <div className={mobileNavInner()}>
-            {navItems.map((item) => {
+            {mobileNavItems.map((item) => {
               const isActive = isActiveRoute(pathname, item.href)
 
               return (

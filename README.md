@@ -2,9 +2,9 @@
 
 Contributions: 
 
-Sandro Saralidze - Developed the NEXT.JS initial setup and main/landing page, following the coding patterns of react/next for good architecture.
+Sandro Saralidze - Developed the NEXT.JS initial setup and main/landing page as well as many other pages following the coding patterns of react/next for good architecture. Elevated mobile designs and overall responsivness.
 
-Teimuraz Futkaradze - Researched and gave final design options From figma, dribble and etc. as well as color palletes. Reviewing the design changes and PRs.
+Teimuraz Futkaradze - Researched and gave final design options From figma, dribble and etc. as well as color palletes. Reviewing the design changes and PRs. Added bots page + inner bots/play pages. Gave redesign options.
 
 Hosted on vercel: https://card-bot-arena.vercel.app/
 

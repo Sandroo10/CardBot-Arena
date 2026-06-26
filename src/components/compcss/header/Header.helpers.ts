@@ -10,7 +10,15 @@ export const navItems = [
   {
     label: "Leaderboard",
     href: "/leaderboard"
-  },
+  }
+]
+
+export const mobileNavItems = [
+  ...navItems,
+  {
+    label: "Profile",
+    href: "/profile"
+  }
 ]
 
 export function isActiveRoute(pathname: string, href: string) {

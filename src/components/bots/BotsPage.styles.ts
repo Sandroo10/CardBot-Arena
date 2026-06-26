@@ -1,11 +1,11 @@
 import { cva } from "class-variance-authority"
 
-export const botsPageShell = cva("min-h-screen py-12")
+export const botsPageShell = cva("min-h-screen py-8 sm:py-12")
 
-export const botsPageContent = cva("space-y-9")
+export const botsPageContent = cva("space-y-7 sm:space-y-9")
 
 export const controlsPanel = cva(
-  "space-y-5 rounded-[1.5rem] border border-white/10 bg-background/78 p-5 shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
+  "space-y-5 rounded-[1.25rem] border border-white/10 bg-background/78 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.22)] sm:rounded-[1.5rem] sm:p-5"
 )
 
 export const pageHeader = cva("flex flex-col gap-4 md:flex-row md:items-end md:justify-between")
@@ -14,7 +14,7 @@ export const pageTitleWrap = cva("space-y-2")
 
 export const pageEyebrow = cva("text-sm font-black uppercase tracking-[0.22em] text-bura")
 
-export const pageTitle = cva("text-3xl font-black leading-tight text-foreground sm:text-4xl")
+export const pageTitle = cva("text-2xl font-black leading-tight text-foreground sm:text-4xl")
 
 export const pageDescription = cva("max-w-3xl text-base leading-7 text-muted-foreground")
 
@@ -61,13 +61,13 @@ export const resetButton = cva(
   "w-fit rounded-lg px-3 py-2 text-sm font-black text-primary transition hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 )
 
-export const botGrid = cva("grid gap-5 sm:grid-cols-2 lg:grid-cols-3")
+export const botGrid = cva("grid gap-4 sm:grid-cols-2 lg:grid-cols-3")
 
 export const rosterGroups = cva("space-y-8")
 
 export const rosterGroup = cva("space-y-4")
 
-export const rosterGroupHeader = cva("flex items-center justify-between gap-4")
+export const rosterGroupHeader = cva("flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4")
 
 export const rosterGroupTitle = cva("text-sm font-black uppercase tracking-[0.2em]", {
   variants: {
@@ -84,7 +84,7 @@ export const rosterGroupTitle = cva("text-sm font-black uppercase tracking-[0.2e
 export const rosterGroupCount = cva("text-sm font-bold text-muted-foreground")
 
 export const botCard = cva(
-  "group relative flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border p-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-colors",
+  "group relative flex min-h-[20rem] flex-col overflow-hidden rounded-2xl border p-4 shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-colors sm:min-h-[22rem] sm:p-5",
   {
     variants: {
       status: {
@@ -104,7 +104,7 @@ export const botCard = cva(
   }
 )
 
-export const botCardTop = cva("flex items-start justify-between gap-4")
+export const botCardTop = cva("flex items-start justify-between gap-3")
 
 export const botAvatar = cva(
   "grid size-16 place-items-center rounded-2xl border text-lg font-black shadow-[0_16px_36px_rgba(0,0,0,0.26)]",
@@ -121,7 +121,7 @@ export const botAvatar = cva(
   }
 )
 
-export const badgeStack = cva("flex flex-wrap justify-end gap-2")
+export const badgeStack = cva("flex max-w-[11rem] flex-wrap justify-end gap-2")
 
 export const botCardBody = cva("mt-6 flex-1 space-y-5")
 
@@ -143,7 +143,7 @@ export const lockedPreview = cva(
   "rounded-xl bg-red-950/28 px-4 py-3 text-sm font-bold leading-6 text-red-100/90"
 )
 
-export const botFooter = cva("mt-6 flex items-center justify-between gap-4")
+export const botFooter = cva("mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4")
 
 export const botStrategy = cva("text-sm font-semibold leading-6 text-muted-foreground")
 

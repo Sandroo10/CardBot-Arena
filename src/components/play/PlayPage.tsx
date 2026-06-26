@@ -35,6 +35,7 @@ import {
   lockedTitle,
   lossButton,
   modalBackdrop,
+  mobileBackLink,
   panelText,
   panelTitle,
   playCard,
@@ -170,6 +171,11 @@ export function PlayPage({ bot }: PlayPageProps) {
   return (
     <main className={playShell()}>
       <Container className={playContent()}>
+        <Link className={mobileBackLink()} href={`/bots/${bot.id}`}>
+          <ArrowLeft aria-hidden="true" size={18} />
+          Back to bot
+        </Link>
+
         <section className={playHeader()}>
           <div className={headerCopy()}>
             <p className={playEyebrow()}>Live table</p>
