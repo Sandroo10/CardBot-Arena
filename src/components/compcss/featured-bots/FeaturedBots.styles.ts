@@ -5,20 +5,20 @@ export const featuredSection = cva("relative scroll-mt-32")
 export const featuredContainer = cva("space-y-8")
 
 export const featuredHeaderRow = cva(
-  "flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
+  "flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
 )
 
 export const featuredSpotlight = cva(
-  "grid gap-6 rounded-[2rem] border border-white/12 bg-background/72 p-5 shadow-[0_22px_54px_rgba(0,0,0,0.26)] lg:grid-cols-[0.85fr_1.15fr] lg:p-7"
+  "grid gap-4 rounded-[2rem] bg-background/58 p-4 shadow-[0_18px_42px_rgba(0,0,0,0.2)] lg:grid-cols-[0.78fr_1.22fr] lg:p-5"
 )
 
 export const botCard = cva(
-  "group relative min-h-[20rem] overflow-hidden rounded-2xl border p-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-colors",
+  "group relative min-h-[20rem] overflow-hidden rounded-2xl border p-5 shadow-[0_18px_38px_rgba(0,0,0,0.22)] transition-colors",
   {
     variants: {
       status: {
         active:
-          "border-white/12 bg-card/88 hover:border-primary/45",
+          "border-primary/18 bg-[linear-gradient(135deg,rgba(20,184,166,0.11),rgba(15,23,42,0.82)_42%,rgba(6,182,212,0.08))] hover:border-primary/42",
         maintenance: "border-white/8 bg-card/40 opacity-70 grayscale"
       },
       game: {
@@ -34,10 +34,10 @@ export const botCard = cva(
 )
 
 export const spotlightVisual = cva(
-  "relative min-h-80 overflow-hidden rounded-[1.75rem] border border-bura/20 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.24),rgba(15,23,42,0.9)_58%)] p-5"
+  "relative min-h-72 overflow-hidden rounded-[1.75rem] bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.18),rgba(15,23,42,0.72)_58%)] p-5"
 )
 
-export const spotlightCardStack = cva("absolute inset-x-8 bottom-8 flex justify-center gap-4")
+export const spotlightCardStack = cva("absolute inset-x-8 bottom-7 flex justify-center gap-4")
 
 export const spotlightPlayingCard = cva(
   "flex h-36 w-24 flex-col justify-between rounded-2xl border border-bura bg-white/95 p-4 text-cyan-800 shadow-[0_24px_50px_rgba(0,0,0,0.32)]"
@@ -50,12 +50,13 @@ export const spotlightCardRank = cva("text-3xl font-black")
 export const spotlightCardSuit = cva("text-sm font-black uppercase tracking-[0.16em]")
 
 export const spotlightBotBubble = cva(
-  "absolute left-5 top-5 max-w-56 rounded-2xl border border-white/12 bg-background/86 p-4"
+  "absolute left-5 top-5 max-w-56 rounded-2xl bg-background/72 p-4"
 )
 
 export const spotlightBotBubbleTitle = cva("text-base font-black text-foreground")
 
 export const spotlightBotBubbleText = cva("mt-1 text-sm leading-6 text-muted-foreground")
+
 
 export const spotlightBody = cva("flex flex-col justify-between gap-6")
 
@@ -86,7 +87,7 @@ export const botDescription = cva("text-base leading-7 text-muted-foreground")
 
 export const botMetaGrid = cva("grid grid-cols-2 gap-3")
 
-export const botMetaItem = cva("rounded-xl border border-white/10 bg-white/8 p-3")
+export const botMetaItem = cva("rounded-xl bg-white/7 p-3")
 
 export const botMetaLabel = cva("text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground")
 
@@ -95,6 +96,12 @@ export const botMetaValue = cva("mt-1 text-base font-black text-foreground")
 export const botActionRow = cva("mt-6 flex items-center justify-between gap-4")
 
 export const rewardText = cva("text-sm font-bold text-muted-foreground")
+
+export const featuredPlayLink = cva(
+  "min-w-32 shadow-[0_16px_34px_rgba(20,184,166,0.24)]"
+)
+
+export const viewAllBotsLink = cva("min-w-36 whitespace-nowrap")
 
 export const lockedAction = cva(
   "inline-flex min-h-10 cursor-not-allowed items-center justify-center rounded-lg px-4 text-sm font-extrabold text-muted-foreground opacity-70"

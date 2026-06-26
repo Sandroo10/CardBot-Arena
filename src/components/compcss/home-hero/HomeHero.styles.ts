@@ -38,8 +38,12 @@ export const arenaStatus = cva(
   "rounded-full border border-success/30 bg-success/15 px-3 py-1 text-sm font-extrabold text-success"
 )
 
+export const previewCta = cva(
+  "inline-flex min-h-9 items-center justify-center rounded-full bg-primary px-4 text-sm font-black text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+)
+
 export const tableSurface = cva(
-  "mt-7 rounded-[1.75rem] border border-primary/20 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.2),rgba(15,23,42,0.85)_58%)] p-5"
+  "mt-7 rounded-[1.75rem] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.16),rgba(15,23,42,0.82)_58%)] p-5"
 )
 
 export const botRow = cva("flex items-center justify-between gap-3")
@@ -55,7 +59,7 @@ export const botName = cva("font-extrabold text-foreground")
 export const botSubtext = cva("text-sm font-semibold text-muted-foreground")
 
 export const scoreChip = cva(
-  "rounded-2xl border border-white/12 bg-background/82 px-4 py-3 text-center shadow-[0_12px_28px_rgba(0,0,0,0.22)]"
+  "rounded-2xl bg-background/82 px-4 py-3 text-center shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
 )
 
 export const scoreLabel = cva("text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground")
@@ -65,7 +69,7 @@ export const scoreValue = cva("mt-1 text-xl font-black text-foreground")
 export const playedCards = cva("my-8 flex justify-center gap-4")
 
 export const playingCard = cva(
-  "flex h-32 w-24 flex-col justify-between rounded-2xl border bg-white/95 p-4 text-slate-950 shadow-[0_24px_50px_rgba(0,0,0,0.35)]",
+  "flex h-32 w-24 flex-col justify-between rounded-2xl border bg-white/95 p-4 text-slate-950 shadow-[0_18px_34px_rgba(0,0,0,0.28)]",
   {
     variants: {
       tone: {
@@ -87,7 +91,7 @@ export const cardSuit = cva("text-sm font-black uppercase tracking-[0.16em]")
 export const handRow = cva("flex justify-center gap-3")
 
 export const handCard = cva(
-  "h-24 w-16 rounded-xl border border-white/15 bg-gradient-to-br from-slate-800 to-slate-950 shadow-[0_16px_34px_rgba(0,0,0,0.35)]"
+  "h-24 w-16 rounded-xl border border-white/8 bg-slate-900/80 shadow-[0_12px_24px_rgba(0,0,0,0.24)]"
 )
 
 export const scrollCue = cva(

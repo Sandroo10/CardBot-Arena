@@ -63,6 +63,26 @@ export const resetButton = cva(
 
 export const botGrid = cva("grid gap-5 sm:grid-cols-2 lg:grid-cols-3")
 
+export const rosterGroups = cva("space-y-8")
+
+export const rosterGroup = cva("space-y-4")
+
+export const rosterGroupHeader = cva("flex items-center justify-between gap-4")
+
+export const rosterGroupTitle = cva("text-sm font-black uppercase tracking-[0.2em]", {
+  variants: {
+    tone: {
+      active: "text-bura",
+      maintenance: "text-red-200"
+    }
+  },
+  defaultVariants: {
+    tone: "active"
+  }
+})
+
+export const rosterGroupCount = cva("text-sm font-bold text-muted-foreground")
+
 export const botCard = cva(
   "group relative flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border p-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-colors",
   {
@@ -70,7 +90,7 @@ export const botCard = cva(
       status: {
         active:
           "border-bura/35 bg-card/88 hover:border-primary/55",
-        maintenance: "border-white/8 bg-card/38 opacity-65 grayscale"
+        maintenance: "border-white/8 bg-card/58 shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
       },
       game: {
         Joker: "before:absolute before:inset-x-6 before:top-0 before:h-px before:bg-joker/70",
@@ -109,6 +129,8 @@ export const botTitle = cva("text-2xl font-black text-foreground")
 
 export const botText = cva("mt-2 text-base leading-7 text-muted-foreground")
 
+export const lockedBotText = cva("mt-2 text-base leading-7 text-slate-300")
+
 export const botInfoGrid = cva("grid grid-cols-2 gap-3")
 
 export const botInfoTile = cva("rounded-xl border border-white/10 bg-white/8 p-3")
@@ -116,6 +138,10 @@ export const botInfoTile = cva("rounded-xl border border-white/10 bg-white/8 p-3
 export const botInfoLabel = cva("text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground")
 
 export const botInfoValue = cva("mt-1 text-base font-black text-foreground")
+
+export const lockedPreview = cva(
+  "rounded-xl bg-red-950/28 px-4 py-3 text-sm font-bold leading-6 text-red-100/90"
+)
 
 export const botFooter = cva("mt-6 flex items-center justify-between gap-4")
 

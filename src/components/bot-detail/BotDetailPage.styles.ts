@@ -9,7 +9,7 @@ export const backLink = cva(
 )
 
 export const heroPanel = cva(
-  "grid gap-7 overflow-hidden rounded-[1.5rem] border border-white/10 bg-background/78 p-5 shadow-[0_18px_42px_rgba(0,0,0,0.22)] lg:grid-cols-[1.05fr_0.95fr] lg:p-7"
+  "mx-auto grid max-w-6xl gap-7 overflow-hidden rounded-[1.5rem] border border-white/8 bg-background/76 p-5 shadow-[0_16px_36px_rgba(0,0,0,0.2)] lg:grid-cols-[1.05fr_0.95fr] lg:p-7"
 )
 
 export const heroCopy = cva("space-y-6")
@@ -58,6 +58,10 @@ export const badgeRow = cva("flex flex-wrap gap-2")
 
 export const actionRow = cva("flex flex-wrap gap-3")
 
+export const secondaryTextLink = cva(
+  "inline-flex min-h-10 items-center justify-center rounded-lg px-2 text-sm font-black text-muted-foreground transition hover:bg-white/8 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+)
+
 export const disabledAction = cva(
   "inline-flex min-h-12 cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/8 px-5 text-base font-extrabold text-muted-foreground"
 )
@@ -67,7 +71,7 @@ export const lockedNotice = cva(
 )
 
 export const tablePanel = cva(
-  "rounded-[1.35rem] border border-bura/25 bg-card/68 p-5"
+  "rounded-[1.35rem] bg-[radial-gradient(circle_at_50%_18%,rgba(20,184,166,0.18),rgba(15,23,42,0.72)_58%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_16px_34px_rgba(6,182,212,0.08)]"
 )
 
 export const tableHeader = cva("flex items-start justify-between gap-4")
@@ -77,7 +81,7 @@ export const tableKicker = cva("text-xs font-black uppercase tracking-[0.18em] t
 export const tableTitle = cva("mt-1 text-xl font-black text-foreground")
 
 export const tableMeta = cva(
-  "rounded-xl border border-white/12 bg-background/70 px-4 py-3 text-center text-sm font-black text-foreground"
+  "rounded-xl bg-background/70 px-4 py-3 text-center text-sm font-black text-foreground"
 )
 
 export const cardFan = cva("mt-8 flex min-h-44 items-center justify-center gap-3 sm:gap-5")
@@ -105,7 +109,7 @@ export const cardLabel = cva("text-center text-xs font-black uppercase tracking-
 export const detailGrid = cva("grid gap-5 lg:grid-cols-[0.9fr_1.1fr]")
 
 export const infoPanel = cva(
-  "rounded-[1.5rem] border border-white/10 bg-card/66 p-5 shadow-[0_16px_34px_rgba(0,0,0,0.2)]"
+  "rounded-[1.5rem] bg-card/54 p-5 shadow-[0_12px_26px_rgba(0,0,0,0.14)]"
 )
 
 export const sectionTitle = cva("text-xl font-black text-foreground")
@@ -114,7 +118,7 @@ export const sectionText = cva("mt-2 text-base leading-7 text-muted-foreground")
 
 export const statGrid = cva("mt-5 grid grid-cols-2 gap-3")
 
-export const statTile = cva("rounded-xl border border-white/10 bg-white/7 p-4")
+export const statTile = cva("rounded-xl bg-white/7 p-4")
 
 export const statLabel = cva("text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground")
 
@@ -123,14 +127,14 @@ export const statValue = cva("mt-2 text-lg font-black text-foreground")
 export const tacticList = cva("mt-5 grid gap-3")
 
 export const tacticItem = cva(
-  "flex gap-3 rounded-xl border border-white/10 bg-white/7 p-4 text-sm font-semibold leading-6 text-muted-foreground"
+  "flex gap-3 rounded-xl bg-white/7 p-4 text-sm font-semibold leading-6 text-muted-foreground"
 )
 
 export const tacticIcon = cva("mt-0.5 text-primary")
 
 export const siblingGrid = cva("mt-5 grid gap-3 sm:grid-cols-2")
 
-export const siblingCard = cva("rounded-xl border border-white/10 bg-white/7 p-4")
+export const siblingCard = cva("rounded-xl bg-white/7 p-4")
 
 export const siblingTop = cva("flex items-center justify-between gap-3")
 

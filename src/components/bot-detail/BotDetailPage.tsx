@@ -1,11 +1,10 @@
 import Link from "next/link"
-import { ArrowLeft, Bot as BotIcon, Gauge, Lock, Sparkles, Swords, Trophy, Wrench } from "lucide-react"
+import { ArrowLeft, Gauge, Lock, Sparkles, Swords, Wrench } from "lucide-react"
 
 import {
   getBotStatusTone,
   getDifficultyNote,
   getRewardText,
-  getSiblingBots,
   previewCards
 } from "@/components/bot-detail/BotDetailPage.helpers"
 import {
@@ -30,11 +29,7 @@ import {
   previewCard,
   sectionText,
   sectionTitle,
-  siblingCard,
-  siblingGrid,
-  siblingMeta,
-  siblingName,
-  siblingTop,
+  secondaryTextLink,
   statGrid,
   statLabel,
   statTile,
@@ -59,14 +54,13 @@ type BotDetailPageProps = {
 }
 
 const tableNotes = [
-  "Clear card reads for a first arena session.",
-  "Simple pacing so the table stays easy to scan.",
-  "Reward state is visible before the match starts."
+  "Clear card reads help you understand each round quickly.",
+  "Simple pacing keeps the table easy to scan while you learn.",
+  "The one-point reward makes progress visible after every win."
 ]
 
 export function BotDetailPage({ bot }: BotDetailPageProps) {
   const isActive = bot.status === "active"
-  const siblingBots = getSiblingBots(bot)
 
   return (
     <main className={detailShell()}>
@@ -127,7 +121,7 @@ export function BotDetailPage({ bot }: BotDetailPageProps) {
                   Locked
                 </span>
               )}
-              <Link className={buttonStyles({ intent: "secondary", size: "md" })} href="/leaderboard">
+              <Link className={secondaryTextLink()} href="/leaderboard">
                 View leaderboard
               </Link>
             </div>
@@ -180,9 +174,9 @@ export function BotDetailPage({ bot }: BotDetailPageProps) {
           </div>
 
           <div className={infoPanel()}>
-            <h2 className={sectionTitle()}>Arena notes</h2>
+            <h2 className={sectionTitle()}>Why this table is beginner-friendly</h2>
             <p className={sectionText()}>
-              This page is built as a polished pre-match card, giving the player enough context without making the UI feel heavy.
+              Bura Easy is designed as the first playable table, with a readable setup and low-pressure rewards.
             </p>
             <div className={tacticList()}>
               {tableNotes.map((note) => (
@@ -194,31 +188,6 @@ export function BotDetailPage({ bot }: BotDetailPageProps) {
             </div>
           </div>
         </section>
-
-        {siblingBots.length > 0 ? (
-          <section className={infoPanel()} aria-labelledby="same-game-title">
-            <h2 className={sectionTitle()} id="same-game-title">
-              Same game bots
-            </h2>
-            <div className={siblingGrid()}>
-              {siblingBots.map((sibling) => (
-                <div className={siblingCard()} key={sibling.id}>
-                  <div className={siblingTop()}>
-                    <p className={siblingName()}>{sibling.name}</p>
-                    {sibling.status === "active" ? (
-                      <Trophy aria-hidden="true" className={tacticIcon()} size={18} />
-                    ) : (
-                      <BotIcon aria-hidden="true" className={tacticIcon()} size={18} />
-                    )}
-                  </div>
-                  <p className={siblingMeta()}>
-                    {sibling.difficulty} / {sibling.status === "active" ? "playable" : "under maintenance"}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        ) : null}
       </Container>
     </main>
   )

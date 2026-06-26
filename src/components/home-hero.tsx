@@ -5,7 +5,6 @@ import { floatingCards } from "@/components/compcss/home-hero/HomeHero.helpers"
 import {
   arenaHeader,
   arenaPanel,
-  arenaStatus,
   arenaTitle,
   botAvatar,
   botMeta,
@@ -27,6 +26,7 @@ import {
   heroVisual,
   playedCards,
   playingCard,
+  previewCta,
   scoreChip,
   scoreLabel,
   scoreValue,
@@ -56,11 +56,13 @@ export function HomeHero() {
           </div>
         </div>
 
-        <div className={heroVisual()} aria-hidden="true">
+        <div className={heroVisual()}>
           <div className={arenaPanel()}>
             <div className={arenaHeader()}>
               <p className={arenaTitle()}>Live practice table</p>
-              <span className={arenaStatus()}>Ready</span>
+              <Link className={previewCta()} href="/play/bura-easy">
+                Try demo
+              </Link>
             </div>
             <div className={tableSurface()}>
               <div className={botRow()}>

@@ -10,6 +10,7 @@ import {
   filterBots,
   getBotHref,
   getBotStatusLabel,
+  groupBotsByStatus,
   initialBotsPageState,
   type BotFilter
 } from "@/components/bots/BotsPage.helpers"
@@ -38,6 +39,8 @@ import {
   filterButton,
   filterRow,
   lockedButton,
+  lockedBotText,
+  lockedPreview,
   maintenanceOverlay,
   maintenancePill,
   pageDescription,
@@ -48,6 +51,11 @@ import {
   resetButton,
   resultsBar,
   resultsText,
+  rosterGroup,
+  rosterGroupCount,
+  rosterGroupHeader,
+  rosterGroups,
+  rosterGroupTitle,
   rosterSummary,
   searchIcon,
   searchInput,
@@ -59,6 +67,7 @@ import { bots } from "@/data/bots"
 export function BotsPage() {
   const [state, dispatch] = useReducer(botsPageReducer, initialBotsPageState)
   const visibleBots = useMemo(() => filterBots(bots, state), [state])
+  const { activeBots, maintenanceBots } = useMemo(() => groupBotsByStatus(visibleBots), [visibleBots])
   const activeCount = bots.filter((bot) => bot.status === "active").length
   const hasActiveFilters = state.filter !== "All" || state.search.trim().length > 0
 
@@ -121,65 +130,105 @@ export function BotsPage() {
         </section>
 
         {visibleBots.length > 0 ? (
-          <section className={botGrid()} aria-label="Bot roster">
-            {visibleBots.map((bot) => {
-              const isActive = bot.status === "active"
-              const botHref = getBotHref(bot)
+          <section className={rosterGroups()} aria-label="Bot roster">
+            {activeBots.length > 0 ? (
+              <div className={rosterGroup()}>
+                <div className={rosterGroupHeader()}>
+                  <h2 className={rosterGroupTitle({ tone: "active" })}>Available now</h2>
+                  <p className={rosterGroupCount()}>{activeBots.length} playable</p>
+                </div>
+                <div className={botGrid()}>
+                  {activeBots.map((bot) => {
+                    const botHref = getBotHref(bot)
 
-              return (
-                <article className={botCard({ status: bot.status, game: bot.game })} key={bot.id}>
-                  <div className={botCardTop()}>
-                    <div className={botAvatar({ game: bot.game })}>{bot.avatar}</div>
-                    <div className={badgeStack()}>
-                      <Badge tone={bot.game === "Joker" ? "joker" : "bura"}>{bot.game}</Badge>
-                      <Badge tone={bot.difficulty === "Easy" && isActive ? "success" : "locked"}>
-                        {getBotStatusLabel(bot)}
-                      </Badge>
-                    </div>
-                  </div>
+                    return (
+                      <article className={botCard({ status: bot.status, game: bot.game })} key={bot.id}>
+                        <div className={botCardTop()}>
+                          <div className={botAvatar({ game: bot.game })}>{bot.avatar}</div>
+                          <div className={badgeStack()}>
+                            <Badge tone={bot.game === "Joker" ? "joker" : "bura"}>{bot.game}</Badge>
+                            <Badge tone="success">{getBotStatusLabel(bot)}</Badge>
+                          </div>
+                        </div>
 
-                  <div className={botCardBody()}>
-                    <div>
-                      <h2 className={botTitle()}>{bot.name}</h2>
-                      <p className={botText()}>{bot.personality}</p>
-                    </div>
-                    <div className={botInfoGrid()}>
-                      <div className={botInfoTile()}>
-                        <p className={botInfoLabel()}>Difficulty</p>
-                        <p className={botInfoValue()}>{bot.difficulty}</p>
+                        <div className={botCardBody()}>
+                          <div>
+                            <h3 className={botTitle()}>{bot.name}</h3>
+                            <p className={botText()}>{bot.personality}</p>
+                          </div>
+                          <div className={botInfoGrid()}>
+                            <div className={botInfoTile()}>
+                              <p className={botInfoLabel()}>Difficulty</p>
+                              <p className={botInfoValue()}>{bot.difficulty}</p>
+                            </div>
+                            <div className={botInfoTile()}>
+                              <p className={botInfoLabel()}>Reward</p>
+                              <p className={botInfoValue()}>{bot.reward} pt</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className={botFooter()}>
+                          <p className={botStrategy()}>{bot.strategy}</p>
+                          {botHref ? (
+                            <Link className={buttonStyles({ intent: "primary", size: "sm" })} href={botHref}>
+                              Play
+                            </Link>
+                          ) : null}
+                        </div>
+                      </article>
+                    )
+                  })}
+                </div>
+              </div>
+            ) : null}
+
+            {maintenanceBots.length > 0 ? (
+              <div className={rosterGroup()}>
+                <div className={rosterGroupHeader()}>
+                  <h2 className={rosterGroupTitle({ tone: "maintenance" })}>Coming soon</h2>
+                  <p className={rosterGroupCount()}>{maintenanceBots.length} under maintenance</p>
+                </div>
+                <div className={botGrid()}>
+                  {maintenanceBots.map((bot) => (
+                    <article className={botCard({ status: bot.status, game: bot.game })} key={bot.id}>
+                      <div className={botCardTop()}>
+                        <div className={botAvatar({ game: bot.game })}>{bot.avatar}</div>
+                        <div className={badgeStack()}>
+                          <Badge tone={bot.game === "Joker" ? "joker" : "bura"}>{bot.game}</Badge>
+                          <Badge tone="locked">{getBotStatusLabel(bot)}</Badge>
+                        </div>
                       </div>
-                      <div className={botInfoTile()}>
-                        <p className={botInfoLabel()}>Reward</p>
-                        <p className={botInfoValue()}>{isActive ? `${bot.reward} pt` : "Locked"}</p>
+
+                      <div className={botCardBody()}>
+                        <div>
+                          <h3 className={botTitle()}>{bot.name}</h3>
+                          <p className={lockedBotText()}>{bot.personality}</p>
+                        </div>
+                        <p className={lockedPreview()}>
+                          {bot.difficulty} tier preview. Reward and table access unlock in a later push.
+                        </p>
                       </div>
-                    </div>
-                  </div>
 
-                  <div className={botFooter()}>
-                    <p className={botStrategy()}>{bot.strategy}</p>
-                    {isActive && botHref ? (
-                      <Link className={buttonStyles({ intent: "primary", size: "sm" })} href={botHref}>
-                        Play
-                      </Link>
-                    ) : (
-                      <span className={lockedButton()}>
-                        <Lock aria-hidden="true" size={16} />
-                        Locked
-                      </span>
-                    )}
-                  </div>
+                      <div className={botFooter()}>
+                        <p className={botStrategy()}>{bot.strategy}</p>
+                        <span className={lockedButton()}>
+                          <Lock aria-hidden="true" size={16} />
+                          Locked
+                        </span>
+                      </div>
 
-                  {!isActive ? (
-                    <div className={maintenanceOverlay()} aria-hidden="true">
-                      <span className={maintenancePill()}>
-                        <Wrench aria-hidden="true" size={16} />
-                        Under Maintenance
-                      </span>
-                    </div>
-                  ) : null}
-                </article>
-              )
-            })}
+                      <div className={maintenanceOverlay()} aria-hidden="true">
+                        <span className={maintenancePill()}>
+                          <Wrench aria-hidden="true" size={16} />
+                          Under Maintenance
+                        </span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </section>
         ) : (
           <section className={emptyState()} aria-live="polite">

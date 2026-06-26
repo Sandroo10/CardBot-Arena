@@ -65,6 +65,13 @@ export function filterBots(bots: Bot[], state: BotsPageState) {
   })
 }
 
+export function groupBotsByStatus(bots: Bot[]) {
+  return {
+    activeBots: bots.filter((bot) => bot.status === "active"),
+    maintenanceBots: bots.filter((bot) => bot.status === "maintenance")
+  }
+}
+
 export function getBotHref(bot: Bot) {
   return bot.status === "active" ? `/bots/${bot.id}` : undefined
 }
